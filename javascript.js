@@ -7,8 +7,18 @@ function createGrid () {
     }
 }
 
+//Change color of every pixel hoverd
+function changeColor(pixel) {
+    pixel.target.style.backgroundColor = 'black';
+}
 
 //Load grid to webpage
 addEventListener('DOMContentLoaded', () => {
     createGrid();
+
+    const pixels = document.querySelectorAll('.pixel');
+    // Attach event listeners to each pixel
+    pixels.forEach(pixel => {
+        pixel.addEventListener('mouseover', changeColor);
+    });
 });
