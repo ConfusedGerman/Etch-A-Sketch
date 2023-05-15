@@ -1,0 +1,23 @@
+#parent-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#container {
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.pixel {
+    display: flex;
+    background-color: aliceblue;
+    flex-basis: 6.25%;
+    height: 6.25%;
+}
