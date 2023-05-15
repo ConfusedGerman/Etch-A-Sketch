@@ -1,1 +1,1 @@
-# Etch-A-Sketch
+Creating a "Etch-A-Sketch" to apply my knowledge on html, css and javascript on a small project, especially flexbox and DOM-manipulation
