@@ -15,6 +15,7 @@ function changeColor(pixel) {
 //Load grid to webpage, start program here
 addEventListener('DOMContentLoaded', () => {
     createGrid();
+    attachEventListeners();
 
 
     const button = document.querySelector('button');
@@ -23,16 +24,8 @@ addEventListener('DOMContentLoaded', () => {
         reomveOldGrid();
         //Create new grid with new pixel size
         createNewGrid(pixelSize());
+        attachEventListeners();
     });
-
-    // Attach event listeners to each pixel
-    function attachEventListeners() {
-        const pixels = document.querySelectorAll('.pixel');
-        pixels.forEach(pixel => {
-            pixel.addEventListener('mouseover', changeColor);
-        });
-    }
-
 });
 
 
@@ -65,4 +58,12 @@ function createNewGrid (number) {
         pixel.style.flexBasis = heightWidth;
         container.appendChild(pixel);
     }
+}
+
+// Attach event listeners to each pixel
+function attachEventListeners() {
+    const pixels = document.querySelectorAll('.pixel');
+    pixels.forEach(pixel => {
+        pixel.addEventListener('mouseover', changeColor);
+    });
 }
