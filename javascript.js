@@ -28,9 +28,6 @@ addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-
-
 //Delete the old grid pixel by pixel
 function reomveOldGrid () {
     const oldPixels = document.querySelectorAll('.pixel');
@@ -50,7 +47,6 @@ function pixelPerRow () {
     return number;
 }
 
-
 //Create new grid with updatet pixel size
 function createNewGrid (number) {
     const container = document.querySelector('#container');
@@ -66,9 +62,7 @@ function createNewGrid (number) {
     }
 }
 
-
 //Section for random color generating
-
 //Random number between 0 and 255
 function randomNumber () {
     return Math.floor(Math.random() * 256);
@@ -90,7 +84,7 @@ function changeToRandomColor(pixel) {
     pixel.target.style.backgroundColor = `${createRandomColor(randomRed, randomGreen, randomBlue)}`;
 }
 
-//Listen to hovering and chan
+//Listen to hovering and change Color
 function attachEventListeners () {
     const colorButton = document.querySelector("#color");
     const blackButton = document.querySelector("#black");
