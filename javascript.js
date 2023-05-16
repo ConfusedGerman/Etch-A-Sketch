@@ -73,3 +73,11 @@ function attachEventListeners() {
         pixel.addEventListener('mouseover', changeColor);
     });
 }
+
+
+//Section for random color generating
+
+//Random number between 0 and 255
+function randomNumber () {
+    return Math.floor(Math.random() * 256);
+}
