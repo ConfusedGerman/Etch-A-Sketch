@@ -27,9 +27,8 @@ addEventListener('DOMContentLoaded', () => {
     // When button is clicked delete the old grid and create a new one
     button.addEventListener('click', () => {
         reomveOldGrid();
-        //TODO: change size of pixel here
-        pixelSize();
-        createGrid();
+        //Create new grid with new pixel size
+        createNewGrid(pixelSize());
     });
 
 });
@@ -46,6 +45,19 @@ function reomveOldGrid () {
 function pixelSize () {
     const getInput = document.querySelector('#numberButton');
     const number = getInput.value;
-    pixelPerPixel = (960/number);
-    return pixelPerPixel;
+    return number;
+}
+
+
+//Create new grid with updatet pixel size
+function createNewGrid (number) {
+    const container = document.querySelector('#container');
+    for (let i = 0; i < number*number; i++) {
+        let pixel = document.createElement('div');
+        pixel.classList.add('pixel');
+        const heightWidth = `${100 / number}%`;
+        pixel.style.height = heightWidth;
+        pixel.style.flexBasis = heightWidth;
+        container.appendChild(pixel);
+    }
 }
