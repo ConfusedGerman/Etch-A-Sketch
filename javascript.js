@@ -89,6 +89,10 @@ function attachEventListeners () {
     const colorButton = document.querySelector("#color");
     const blackButton = document.querySelector("#black");
     const pixels = document.querySelectorAll('.pixel');
+    //Default on change color to black
+    pixels.forEach(pixel => {
+        pixel.addEventListener('mouseover', changeColor);
+    });
 
     colorButton.addEventListener('click', () => {
         pixels.forEach(pixel => {
