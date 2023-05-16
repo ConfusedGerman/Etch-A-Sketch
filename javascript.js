@@ -81,3 +81,11 @@ function attachEventListeners() {
 function randomNumber () {
     return Math.floor(Math.random() * 256);
 }
+
+//Create a random hexadecimal color
+function createRandomColor (red, green, blue) {
+    const hexaRed = red.toString(16);
+    const hexaGreen = green.toString(16);
+    const hexaBlue = blue.toString(16);
+    return '#' + hexaRed + hexaGreen + hexaBlue;
+}
