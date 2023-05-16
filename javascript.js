@@ -91,7 +91,7 @@ function createRandomColor (red, green, blue) {
     return '#' + hexaRed + hexaGreen + hexaBlue;
 }
 
-//Change color of every pixel hoverd
+//Change color of a pixel to a random color
 function changeToRandomColor(pixel) {
     const randomRed = randomNumber();
     const randomGreen = randomNumber();
