@@ -94,18 +94,17 @@ function changeToRandomColor(pixel) {
 function attachEventListeners () {
     const colorButton = document.querySelector("#color");
     const blackButton = document.querySelector("#black");
+    const pixels = document.querySelectorAll('.pixel');
 
     colorButton.addEventListener('click', () => {
-        const pixels = document.querySelectorAll('.pixel');
         pixels.forEach(pixel => {
-        pixel.addEventListener('mouseover', changeToRandomColor);
+            pixel.addEventListener('mouseover', changeToRandomColor);
     });
     });
 
     blackButton.addEventListener('click', () => {
-        const pixels = document.querySelectorAll('.pixel');
         pixels.forEach(pixel => {
-        pixel.addEventListener('mouseover', changeColor);
-    });
+            pixel.addEventListener('mouseover', changeColor);
+        }); 
     });
 }
