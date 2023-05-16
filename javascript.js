@@ -43,6 +43,10 @@ function reomveOldGrid () {
 function pixelSize () {
     const getInput = document.querySelector('#numberButton');
     const number = getInput.value;
+    if (number < 1 || number > 100) {
+        alert("Number has to be between 1 and 100, please create a valid grid!");
+        return;
+    }
     return number;
 }
 
@@ -53,7 +57,9 @@ function createNewGrid (number) {
     for (let i = 0; i < number*number; i++) {
         let pixel = document.createElement('div');
         pixel.classList.add('pixel');
+        //Height and width of a pixel is 100/ pixel per row in percent
         const heightWidth = `${100 / number}%`;
+        //Update css values
         pixel.style.height = heightWidth;
         pixel.style.flexBasis = heightWidth;
         container.appendChild(pixel);
