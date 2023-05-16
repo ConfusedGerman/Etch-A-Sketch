@@ -7,11 +7,6 @@ function createGrid () {
     }
 }
 
-//Change color of every pixel hoverd
-function changeColor(pixel) {
-    pixel.target.style.backgroundColor = 'black';
-}
-
 //Load grid to webpage, start program here
 addEventListener('DOMContentLoaded', () => {
     createGrid();
@@ -76,36 +71,52 @@ function createRandomColor (red, green, blue) {
     return '#' + hexaRed + hexaGreen + hexaBlue;
 }
 
-//Change color of a pixel to a random color
-function changeToRandomColor(pixel) {
-    const randomRed = randomNumber();
-    const randomGreen = randomNumber();
-    const randomBlue = randomNumber();
-    pixel.target.style.backgroundColor = `${createRandomColor(randomRed, randomGreen, randomBlue)}`;
-}
-
-//Listen to hovering and change Color
-function attachEventListeners () {
+// Listen to hovering and change color based on button clicks
+function attachEventListeners() {
     const colorButton = document.querySelector("#color");
     const blackButton = document.querySelector("#black");
     const pixels = document.querySelectorAll('.pixel');
-    //Default on change color to black
+    //Default is black color
+    let isColorful = false;
+
+    // Function to change color of every pixel hovered to black
+    function changeColor(pixel) {
+        pixel.target.style.backgroundColor = 'black';
+    }
+
+    //Default on change color to black, no button has to be clicked
     pixels.forEach(pixel => {
         pixel.addEventListener('mouseover', changeColor);
     });
+  
+    // Function to change color of a pixel to a random color
+    function changeToRandomColor(pixel) {
+      const randomRed = randomNumber();
+      const randomGreen = randomNumber();
+      const randomBlue = randomNumber();
+      pixel.target.style.backgroundColor = createRandomColor(randomRed, randomGreen, randomBlue);
+    }
 
-    //Event for colored button, random color
+  
+    // Event listener for the "Colorful" button
     colorButton.addEventListener('click', () => {
+      if (!isColorful) {
         pixels.forEach(pixel => {
-            pixel.addEventListener('mouseover', changeToRandomColor);
+          pixel.removeEventListener('mouseover', changeColor);
+          pixel.addEventListener('mouseover', changeToRandomColor);
+        });
+        isColorful = true;
+      }
     });
-    });
-
-    //Event for black button
+  
+    // Event listener for the "Black" button
     blackButton.addEventListener('click', () => {
+      if (isColorful) {
         pixels.forEach(pixel => {
-            pixel.addEventListener('mouseover', changeColor);
-        }); 
+          pixel.removeEventListener('mouseover', changeToRandomColor);
+          pixel.addEventListener('mouseover', changeColor);
+        });
+        isColorful = false;
+      }
     });
 }
-//hello
