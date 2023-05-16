@@ -66,14 +66,6 @@ function createNewGrid (number) {
     }
 }
 
-// Attach event listeners to each pixel
-function attachEventListeners() {
-    const pixels = document.querySelectorAll('.pixel');
-    pixels.forEach(pixel => {
-        pixel.addEventListener('mouseover', changeColor);
-    });
-}
-
 
 //Section for random color generating
 
@@ -98,10 +90,22 @@ function changeToRandomColor(pixel) {
     pixel.target.style.backgroundColor = `${createRandomColor(randomRed, randomGreen, randomBlue)}`;
 }
 
+//Listen to hovering and chan
+function attachEventListeners () {
+    const colorButton = document.querySelector("#color");
+    const blackButton = document.querySelector("#black");
 
-function colorful () {
-    const pixels = document.querySelectorAll('.pixel');
-    pixels.forEach(pixel => {
+    colorButton.addEventListener('click', () => {
+        const pixels = document.querySelectorAll('.pixel');
+        pixels.forEach(pixel => {
         pixel.addEventListener('mouseover', changeToRandomColor);
+    });
+    });
+
+    blackButton.addEventListener('click', () => {
+        const pixels = document.querySelectorAll('.pixel');
+        pixels.forEach(pixel => {
+        pixel.addEventListener('mouseover', changeColor);
+    });
     });
 }
