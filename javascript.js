@@ -16,12 +16,6 @@ function changeColor(pixel) {
 addEventListener('DOMContentLoaded', () => {
     createGrid();
 
-    const pixels = document.querySelectorAll('.pixel');
-    // Attach event listeners to each pixel
-    pixels.forEach(pixel => {
-        pixel.addEventListener('mouseover', changeColor);
-    });
-
 
     const button = document.querySelector('button');
     // When button is clicked delete the old grid and create a new one
@@ -31,7 +25,18 @@ addEventListener('DOMContentLoaded', () => {
         createNewGrid(pixelSize());
     });
 
+    // Attach event listeners to each pixel
+    function attachEventListeners() {
+        const pixels = document.querySelectorAll('.pixel');
+        pixels.forEach(pixel => {
+            pixel.addEventListener('mouseover', changeColor);
+        });
+    }
+
 });
+
+
+
 
 //Delete the old grid pixel by pixel
 function reomveOldGrid () {
