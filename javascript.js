@@ -23,7 +23,7 @@ addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
         reomveOldGrid();
         //Create new grid with new pixel size
-        createNewGrid(pixelSize());
+        createNewGrid(pixelPerRow());
         attachEventListeners();
     });
 });
@@ -39,8 +39,8 @@ function reomveOldGrid () {
     });
 }
 
-//Calculate the size of a single pixel
-function pixelSize () {
+//Return pixel per row
+function pixelPerRow () {
     const getInput = document.querySelector('#numberButton');
     const number = getInput.value;
     if (number < 1 || number > 100) {
