@@ -70,6 +70,7 @@ function createNewGrid (number) {
 function attachEventListeners() {
     const pixels = document.querySelectorAll('.pixel');
     pixels.forEach(pixel => {
+        //TODO: if button is clicked change changeColor to random color
         pixel.addEventListener('mouseover', changeColor);
     });
 }
@@ -88,4 +89,13 @@ function createRandomColor (red, green, blue) {
     const hexaGreen = green.toString(16);
     const hexaBlue = blue.toString(16);
     return '#' + hexaRed + hexaGreen + hexaBlue;
+}
+
+//Change color of every pixel hoverd
+function changeToRandomColor(pixel) {
+    const randomRed = randomNumber();
+    const randomGreen = randomNumber();
+    const randomBlue = randomNumber();
+
+    pixel.target.style.backgroundColor = `${createRandomColor(randomRed, randomGreen, randomBlue)}`;
 }
