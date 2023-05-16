@@ -94,12 +94,14 @@ function attachEventListeners () {
         pixel.addEventListener('mouseover', changeColor);
     });
 
+    //Event for colored button, random color
     colorButton.addEventListener('click', () => {
         pixels.forEach(pixel => {
             pixel.addEventListener('mouseover', changeToRandomColor);
     });
     });
 
+    //Event for black button
     blackButton.addEventListener('click', () => {
         pixels.forEach(pixel => {
             pixel.addEventListener('mouseover', changeColor);
