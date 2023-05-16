@@ -12,7 +12,7 @@ function changeColor(pixel) {
     pixel.target.style.backgroundColor = 'black';
 }
 
-//Load grid to webpage
+//Load grid to webpage, start program here
 addEventListener('DOMContentLoaded', () => {
     createGrid();
 
