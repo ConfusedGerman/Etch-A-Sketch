@@ -21,4 +21,21 @@ addEventListener('DOMContentLoaded', () => {
     pixels.forEach(pixel => {
         pixel.addEventListener('mouseover', changeColor);
     });
+
+
+    const button = document.querySelector('button');
+    // When button is clicked delete the old grid and create a new one
+    button.addEventListener('click', () => {
+        reomveOldGrid();
+        createGrid();
+    });
+
 });
+
+//Delete the old grid pixel by pixel
+function reomveOldGrid () {
+    const oldPixels = document.querySelectorAll('.pixel');
+    oldPixels.forEach(oldPixels => {
+        oldPixels.remove();
+    });
+}
