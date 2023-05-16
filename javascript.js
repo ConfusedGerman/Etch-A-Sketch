@@ -27,6 +27,8 @@ addEventListener('DOMContentLoaded', () => {
     // When button is clicked delete the old grid and create a new one
     button.addEventListener('click', () => {
         reomveOldGrid();
+        //TODO: change size of pixel here
+        pixelSize();
         createGrid();
     });
 
@@ -38,4 +40,12 @@ function reomveOldGrid () {
     oldPixels.forEach(oldPixels => {
         oldPixels.remove();
     });
+}
+
+//Calculate the size of a single pixel
+function pixelSize () {
+    const getInput = document.querySelector('#numberButton');
+    const number = getInput.value;
+    pixelPerPixel = (960/number);
+    return pixelPerPixel;
 }
