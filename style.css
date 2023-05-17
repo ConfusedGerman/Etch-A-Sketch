@@ -3,6 +3,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     gap: 100px;
+    /* 0 margin on top and bottom, centerd to the left and right*/
     margin: 0 auto;
     /*max width is width of container (960px) plus two times (width + gap) of buttons*/
     max-width: 1560px;
