@@ -13,7 +13,7 @@ addEventListener('DOMContentLoaded', () => {
     attachEventListeners();
 
 
-    const button = document.querySelector('button');
+    const button = document.querySelector('#create');
     // When button is clicked delete the old grid and create a new one
     button.addEventListener('click', () => {
         reomveOldGrid();
