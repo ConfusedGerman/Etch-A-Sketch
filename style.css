@@ -6,6 +6,15 @@
     gap: 4px;
 }
 
+#header {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+}
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 #container {
     height: 960px;
     width: 960px;
