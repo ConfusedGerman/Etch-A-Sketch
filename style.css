@@ -4,9 +4,9 @@
     justify-content: flex-start;
     gap: 100px;
     margin: 0 auto;
+    /*max width is width of container (960px) plus two times (width + gap) of buttons*/
     max-width: 1560px;
 }
-
 #header {
     display: flex;
     justify-content: center;
@@ -60,4 +60,8 @@ h1 {
 
 #color {
     background-color: orangered;
+}
+
+label {
+    font-weight: bold;
 }
